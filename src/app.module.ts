@@ -12,7 +12,6 @@ import configuration from './config/configuration';
 import validationSchema from './config/validation';
 import { HttpExceptionFilter } from './filters/http-exception.filter';
 import { LoggerMiddleware } from './middlewares/logger.middleware';
-import { JwtTokenModule } from './jwt-token/jwt-token.module';
 
 @Module({
   imports: [
@@ -23,7 +22,6 @@ import { JwtTokenModule } from './jwt-token/jwt-token.module';
     }),
     ApiModule,
     CommonModule,
-    JwtTokenModule,
   ],
   providers: [{ provide: APP_FILTER, useClass: HttpExceptionFilter }],
 })
